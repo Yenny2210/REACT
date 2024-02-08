@@ -22,26 +22,30 @@
 </head>
 
 <body>
-    <button>Me gusta</button>
+    <button data-id="123">Me gusta</button>
+    <button data-id="456">Me gusta</button>
+    <button data-id="789">Me gusta</button>
 </body>
 
 <!-- vanilla javascript 🍦 -->
 <script>
     // recuperamos el boton
-    const button = document.querySelector('button')
+    const buttons = document.querySelectorAll('button')
 
-    // al hacer click en el boton, tenemos que ejecutar una funcion
-    button.addEventListener('click', function () {
-        // recuperar la id del atributo del html
-        const id = button.getAttribute('data-id')
-        // llamar a un servicio para actualizar si me gusta
-        if (button.classList.contains('liked')) {
-            button.classList.remove('liked')
-            button.innerText = 'Me gusta'
-        } else {
-            button.classList.remove('liked')
-            button.innerText = 'Ya no me gusta'
-        }
+    buttons.forEach(button => {
+        // al hacer click en el boton, tenemos que ejecutar una funcion
+        button.addEventListener('click', function () {
+            // recuperar la id del atributo del html
+            const id = button.getAttribute('data-id')
+            // llamar a un servicio para actualizar si me gusta
+            if (button.classList.contains('liked')) {
+                button.classList.remove('liked')
+                button.innerText = 'Me gusta'
+            } else {
+                button.classList.add('liked')
+                button.innerText = 'Ya no me gusta'
+            }
+        })
     })
 </script>
 
