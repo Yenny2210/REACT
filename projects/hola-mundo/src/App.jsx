@@ -1,40 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { TwitterFollowCard } from './TwitterFollowCard';
-
-
 export function App() {
-    const formattedUserName = <span>@ola</span>
+    const [name, setName] = useState('midudev')
+
+    console.log('render with name: ', name)
 
     return (
         <section className='App'>
-            <TwitterFollowCard
-                formattedUserName={formattedUserName}
-                isFollowing
-                userName="yennydurango"
-                name="Yenny Durango"
-            />
+            <TwitterFollowCard userName={name}>
+                Yenny Durango
+            </TwitterFollowCard>
+            <TwitterFollowCard userName="minuto30">
+                Minuto 30 Noticias
+            </TwitterFollowCard>
+            <TwitterFollowCard userName="petroski">
+                Petro Presidente
+            </TwitterFollowCard>
 
-            <TwitterFollowCard
-                formattedUserName={formattedUserName}
-                isFollowing={false}
-                userName="impact"
-                name="Impacto"
-            />
-
-            <TwitterFollowCard
-                formattedUserName={formattedUserName}
-                isFollowing
-                userName="caracol"
-                name="Caracol"
-            />
-
-            <TwitterFollowCard
-                formattedUserName={formattedUserName}
-                isFollowing
-                userName="minuto30"
-                name="Minuto 30"
-            />
+            <button onClick={() => setName('pedromichel')}>
+                Cambiar nombre
+            </button>
         </section>
     )
 }

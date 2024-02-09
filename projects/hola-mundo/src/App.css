@@ -37,8 +37,18 @@
     width: 90px;
     font-weight: bold;
     cursor: pointer;
-
 }
+.tw-followCard-boton.is-following {
+   border: 1px solid red;
+   background-color: #ffa9a9;
+   color: white;
+}
+.tw-followCard-boton.is-following:hover {
+   border: 1px solid #ffa9a9;
+   background-color: red;
+   color: white;
+}
+
 .tw-followCard-boton:hover{
     background-color:#D7DBDC;
 }
